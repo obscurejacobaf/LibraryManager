@@ -32,18 +32,22 @@ namespace Microsoft.Web.LibraryManager.Vsix
             "ActiveProjectFlavor:" + Constants.WebsiteProject,
             "ActiveProjectCapability:" + Constants.DotNetCoreWebCapability,
             "HierSingleSelectionName:" + Constants.ConfigFileName + "$" })]
-    [ProvideUIContextRule(PackageGuids.guidUiContextString, 
+    [ProvideUIContextRule(PackageGuids.guidUiContextString,
         name: Vsix.Name,
-        expression: "(WAP | WebSite | DotNetCoreWeb )",
+        expression: "(WAP | WebSite | DotNetCoreWeb | Razor | Maui )",
         termNames: new string[] {
             "WAP",
             "WebSite",
-            "DotNetCoreWeb"
+            "DotNetCoreWeb",
+            "Razor",
+            "Maui"
         },
         termValues: new string[] {
             "ActiveProjectFlavor:" + Constants.WAP,
             "ActiveProjectFlavor:" + Constants.WebsiteProject,
-            "ActiveProjectCapability:" + Constants.DotNetCoreWebCapability })]
+            "ActiveProjectCapability:" + Constants.DotNetCoreWebCapability,
+            "ActiveProjectCapability:Razor",
+            "ActiveProjectCapability:Maui" })]
 
     internal sealed class LibraryManagerPackage : AsyncPackage
     {
